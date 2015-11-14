@@ -1,0 +1,52 @@
+<Doctype HTML>
+<html>
+
+
+
+
+
+<!-- Header Section -->
+  <header>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+  </header>
+
+
+
+  <!-- Body Section -->
+
+  <body ng-app="mhApp">
+    <section ng-controller="mhCtrl">
+      <!-- title injection and music-history controller -->
+      <div>
+        Below me we're injecting title
+        <h1>{{ title }}</h1>
+        Above me we're injecting title
+      </div>
+
+    <!-- music model and injection -->
+    <div>
+      Below me we have an input form and the music model
+      <input type="text" ng-model="music" />
+      <div> {{ music }} </div>
+      Above me we have an input form and the music model
+    </div>
+
+    <!-- artist list injection, ng-repeat, and ng-click -->
+    <div>
+      <ul ng-repeat="artist in artists">
+        <li>{{ artist.artistName }} <button ng-click="killArtist(artist)">Finish</button></li>
+      </ul>
+    </div>
+
+
+    </section>
+  </body>
+
+
+<!-- Footer Section -->
+
+  <footer>
+    <script src="lib/bower_components/angular/angular.min.js"></script>
+    <script src="app/mhApp.js"></script>
+  </footer>
+</html>
